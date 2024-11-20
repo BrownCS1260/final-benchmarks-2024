@@ -12,7 +12,7 @@ Here's how to get started running benchmarks for the final homework:
 1. Clone this respository into your final homework repository:
 
 ```shell
-git clone https://github.com/BrownCS1260/final-benchmarks.git benchmarks
+git clone https://github.com/BrownCS1260/final-benchmarks-2024.git benchmarks
 ```
 
 2. In the new benchmarks directory, make a `config.json` file. This file should
