@@ -1,0 +1,5 @@
+(let ((x 2))
+  (let ((y (+ x x)))
+    (if (= y 4)
+        (print (+ y 1))
+        (print (- y 1)))))

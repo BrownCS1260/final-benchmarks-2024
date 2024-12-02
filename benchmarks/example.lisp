@@ -1,2 +1,3 @@
-(define (f x) (+ x 3))
-(print (f 4))
+(define (double x) (+ x x))
+(define (quadruple x) (double (double x)))
+(print (quadruple 1))
