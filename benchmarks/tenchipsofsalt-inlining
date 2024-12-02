@@ -1,0 +1,5 @@
+(define (f x y) (+ (+ (+ (+ x y) (+ x y)) (+ (+ x y) (+ x y))) (+ (+ (+ x y) (+ x y)) (+ (+ x y) (+ x y))))
+
+(let ((x 5))
+  (let ((y 10))
+    (+ (+ (f y x) (f y x)) (+ (f y x) (f y x)))))
