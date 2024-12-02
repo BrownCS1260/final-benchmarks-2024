@@ -20,4 +20,5 @@
     (newline)
     (print (max (abs x) y))
     (newline)
-    (print (min (abs x) y))))
+    (print (min (abs x) y)))
+)

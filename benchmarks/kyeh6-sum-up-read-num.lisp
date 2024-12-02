@@ -1,10 +1,13 @@
-(define (sum-up x)
-    (if (= x 0)
-        0
-        (+ x (sum-up (- x 1)))))
+(define (mul-three x)
+    (* x 3))
+
+(define (add-two-mul-three x)
+    (+ (mul-three x) 2))
 
 (do
-    (let ((x (read-num))
-          (y (+ x 3)))
-    (print (+ (* (sum-up x) (sum-up y)) (sum-up x))))
+    (let ((x (read-num)))
+        (print (add-two-mul-three x))
+        (newline)
+        (print (let ((x (read-num)))
+            (+ (let ((y (* x 3))) y) 2))))
 )
