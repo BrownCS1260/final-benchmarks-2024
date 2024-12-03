@@ -2,4 +2,4 @@
   (let ((c (if (= a 6)
                (+ a a)
                (- a a))))
-    (let ((e 1)) (print (+ e (+ e e))))))
+    (let ((e 1)) (print (+ e (+ c a))))))
