@@ -13,12 +13,12 @@
         a
         b))
 
-(do
-    (let ((x (- 1 5))
-          (y 10))
-    (print (abs x))
-    (newline)
-    (print (max (abs x) y))
-    (newline)
-    (print (min (abs x) y)))
-)
+(let ((x (- 1 5)))
+  (let ((y 10))
+    (do
+        (print (abs x))
+        (newline)
+        (print (max (abs x) y))
+        (newline)
+        (print (min (abs x) y)))
+))
