@@ -6,13 +6,13 @@
         1
         (mul n (factorial (- n 1)))))
 
-(do     
-    (let ((x 5)
-          (y (+ x x))
-          (z (- y (- 6 x))))
-    (print (factorial y))
-    (newline)
-    (print (factorial x))
-    (newline)
-    (print (factorial z)))
-)
+(let ((x 5))
+  (let ((y (+ x x)))
+    (let ((z (- y (- 6 x))))
+      (do     
+        (print (factorial y))
+        (newline)
+        (print (factorial x))
+        (newline)
+        (print (factorial z)))
+)))
