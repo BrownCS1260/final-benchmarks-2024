@@ -72,7 +72,7 @@ def bench(config: "dict[str, list[str]]", repetitions):
             run_cmd = os.path.abspath(os.path.join(base_output, str(i + 1), f"{example}.exe"))
 
             # Run once untimed to cache in memory and verify output
-            result = subprocess.run(run_cmd, input=stdin, shell=False, capture_output=True)
+            result = subprocess.run(run_cmd, input=stdin.encode(), shell=False, capture_output=True)
             if result.returncode != 0:
                 print(f"Error: '{example}' with configuration '{name}' exited with error")
                 exit(1)
@@ -88,7 +88,7 @@ def bench(config: "dict[str, list[str]]", repetitions):
             for i in range(repetitions):
                 subprocess.run(
                     run_cmd,
-                    input=stdin,
+                    input=stdin.encode(),
                     shell=False,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE
