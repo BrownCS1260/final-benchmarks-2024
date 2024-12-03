@@ -8,7 +8,6 @@ import subprocess
 import time
 import csv
 
-N = 100
 
 def input_file(benchmark):
     pre, _ = os.path.splitext(benchmark)
@@ -23,7 +22,7 @@ def compile_cmd(example: "str", output: "str", passes: "list[str]"):
     output = os.path.relpath(output, start="..")
     return f"dune exec --root . bin/compile.exe -- {passes} {src} {output}"
 
-def bench(config: "dict[str, list[str]]"):
+def bench(config: "dict[str, list[str]]", repetitions):
     # Build the compiler
     subprocess.run(
         "dune build",
@@ -73,7 +72,7 @@ def bench(config: "dict[str, list[str]]"):
             run_cmd = os.path.abspath(os.path.join(base_output, str(i + 1), f"{example}.exe"))
 
             # Run once untimed to cache in memory and verify output
-            result = subprocess.run(run_cmd, input=stdin, shell=False, capture_output=True)
+            result = subprocess.run(run_cmd, input=stdin.encode(), shell=False, capture_output=True)
             if result.returncode != 0:
                 print(f"Error: '{example}' with configuration '{name}' exited with error")
                 exit(1)
@@ -86,7 +85,7 @@ def bench(config: "dict[str, list[str]]"):
                 exit(1)
             # Run N times
             start = time.perf_counter()
-            for i in range(N):
+            for i in range(repetitions):
                 subprocess.run(
                     run_cmd,
                     input=stdin,
@@ -96,7 +95,7 @@ def bench(config: "dict[str, list[str]]"):
                 )
 
             end = time.perf_counter()
-            results[example][name] = ((end - start) * 10 ** 9) / N
+            results[example][name] = ((end - start) * 10 ** 9) / repetitions
 
     return results
 
@@ -112,6 +111,7 @@ def main():
     )
     parser.add_argument("--config", type=argparse.FileType("r"), default="config.json")
     parser.add_argument("--output", type=argparse.FileType("w"), default="results.csv")
+    parser.add_argument("--repeat", type=int, default=100)
     args = parser.parse_args()
     config = None
     try:
@@ -119,7 +119,7 @@ def main():
     except json.decoder.JSONDecodeError as e:
         print("Error reading config file {}: {}".format(args.config.name, e))
         sys.exit(1)
-    results = bench(config)
+    results = bench(config, args.repeat)
     writer = csv.writer(args.output)
     for example in sorted(results.keys()):
         config_times = results[example]
