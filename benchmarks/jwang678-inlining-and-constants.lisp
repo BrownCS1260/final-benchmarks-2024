@@ -5,7 +5,7 @@
             y)
          (+ y y))))
 
-(print (let (x 2)
-         (let (y 3)
+(print (let ((x 2))
+         (let ((y 3))
            (+ 1 
               (f x y))))
