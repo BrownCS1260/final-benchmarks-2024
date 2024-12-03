@@ -6,8 +6,8 @@
 
 (do
     (let ((x (read-num)))
-        (print (add-two-mul-three x))
+        (print (add-two-mul-three x)))
         (newline)
         (print (let ((x (read-num)))
-            (+ (let ((y (* x 3))) y) 2))))
+            (+ (let ((y (* x 3))) y) 2)))
 )
