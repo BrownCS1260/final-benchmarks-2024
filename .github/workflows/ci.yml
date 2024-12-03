@@ -19,7 +19,7 @@ jobs:
       - name: Check out assignments repo
         uses: actions/checkout@v4
         with:
-            repository: 'BrownCS1260-fall-2024/finalhw-stencil'
+            repository: 'BrownCS1260-fall-2023/finalhw-stencil'
             submodules: recursive
             path: 'hw'
       - name: Check out benchmark tests repo
