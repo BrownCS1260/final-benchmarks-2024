@@ -19,13 +19,14 @@ jobs:
       - name: Check out assignments repo
         uses: actions/checkout@v4
         with:
-            repository: 'BrownCS1260-fall-2023/finalhw-stencil'
+            repository: 'BrownCS1260-fall-2024/finalhw-stencil'
             submodules: recursive
             path: 'hw'
       - name: Check out benchmark tests repo
         uses: actions/checkout@v4
         with:
             path: 'hw/benchmarks'
+            ref: ${{ github.event_name == 'push' && 'main' || github.event.pull_request.head.ref }}
       - name: Run benchmarks
         working-directory: 'hw/benchmarks'
         run: chmod -R 1777 ../ && su - cs1260_user -c "cd $(pwd) && eval \$(opam env) && python3 bench.py --repeat 1"
