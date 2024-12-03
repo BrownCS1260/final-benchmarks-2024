@@ -28,5 +28,5 @@ jobs:
             path: 'hw/benchmarks'
       - name: Run benchmarks
         working-directory: 'hw/benchmarks'
-        run: chmod -R 1777 ../ && su - cs1260_user -c "cd $(pwd) && eval \$(opam env) && python3 bench.py"
+        run: chmod -R 1777 ../ && su - cs1260_user -c "cd $(pwd) && eval \$(opam env) && python3 bench.py --repeat 1"
     
