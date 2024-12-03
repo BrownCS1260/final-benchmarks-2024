@@ -6,8 +6,8 @@
 
 (define (h x y z)
   (+ (f x y)
-     (+ g x y)
-        (left z)))
+     (+ (g x y)
+        (left z))))
 
 (let ((x (pair 1 2)))
   (let ((y (pair 3 4)))  
