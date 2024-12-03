@@ -1,0 +1,11 @@
+(let ((a (let ((x 5)) (add1 x)))
+      (b (let ((y 10)) (sub1 y))))
+  (let ((c (if (= a 6)
+               (+ a b)
+               (- b a)))
+        (d (if (< b a)
+               (sub1 b)
+               (add1 a))))
+    (let ((e (let ((z (+ c d))) (add1 z))))
+      (print (+ a (+ b (+ c d)))))))
+      
