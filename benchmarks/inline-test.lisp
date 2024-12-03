@@ -1,4 +1,4 @@
-(define (triple x) (* x 3))
+(define (triple x) (+ x (+ x x)))
 (define (increment x) (+ x 1))
 (print 
   (triple (increment 
