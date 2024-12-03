@@ -1,0 +1,5 @@
+(define (simpleFunction x y) (+ (* x 2) (* y 3)))
+(define (secondSimpleFunction a b)
+  (lambda ((c (+ a 10)))
+    (+ (simpleFunction a b) (simpleFunction c (+ b 5)))))
+(print (let ((var1 100)) (let ((var2 200)) (secondSimpleFunction var1 var2))))

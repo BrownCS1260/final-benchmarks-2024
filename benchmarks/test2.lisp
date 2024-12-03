@@ -1,0 +1,1 @@
+(let ((x (+ 5 10)) (y (+ 10 10))) (let ((res (if (< x y)  (+ x 5) (- y 5)))) (print res)))

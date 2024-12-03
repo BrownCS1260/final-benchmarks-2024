@@ -1,0 +1,5 @@
+(define (simpleAdd x) (+ x 5))
+(let ((a 10)
+      (b 20))
+  (let ((c (+ a b)))
+    (print (+ (simpleAdd a) (simpleAdd c)))))
