@@ -1,5 +1,5 @@
 (define (mul-three x)
-    (* x 3))
+    (+ (+ x x) x))
 
 (define (add-two-mul-three x)
     (+ (mul-three x) 2))
@@ -9,5 +9,5 @@
         (print (add-two-mul-three x)))
         (newline)
         (print (let ((x (read-num)))
-            (+ (let ((y (* x 3))) y) 2)))
+            (+ (let ((y (+ x (+ x x)))) y) 2)))
 )
