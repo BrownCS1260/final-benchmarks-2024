@@ -88,7 +88,7 @@ def bench(config: "dict[str, list[str]]", repetitions):
             for i in range(repetitions):
                 subprocess.run(
                     run_cmd,
-                    input=stdin,
+                    input=stdin.encode(),
                     shell=False,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE
