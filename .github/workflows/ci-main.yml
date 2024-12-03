@@ -1,9 +1,8 @@
-name: Validate tests against reference
+name: Validate tests against reference on main branch
 on: 
-    pull_request_target: 
-        types: [opened, review_requested, ready_for_review, edited, synchronize]
-    issue_comment:
-        types: [created, deleted]
+    push: 
+        branches:
+         - 'main'
 jobs:
   tests:
     name: Check that tests are valid
@@ -23,7 +22,6 @@ jobs:
         uses: actions/checkout@v4
         with:
             path: 'hw/benchmarks'
-            ref: ${{ github.event.pull_request.merge_commit_sha }}
       - name: Run benchmarks
         working-directory: 'hw/benchmarks'
         run: chmod -R 1777 ../ && su - cs1260_user -c "cd $(pwd) && eval \$(opam env) && python3 bench.py --repeat 1"
