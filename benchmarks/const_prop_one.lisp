@@ -1,0 +1,8 @@
+(let ((first 200)
+      (second 300)
+      (third (+ first second))
+      (fourth (- second third))
+      (fifth (+ third fourth))
+      (sixth (- fourth fifth))
+      (seventh (+ fifth sixth)))
+(print (+ first (+ second (+ third (+ fourth (+ fifth (+ sixth seventh))))))))
