@@ -1,4 +1,3 @@
-(define (square x) (* x x))
-(define (cube x) (* x (square x)))
-
-(print (cube 3))
+(let ((x 3))
+  (define (square x) (* x x))
+  (print (square x)))
