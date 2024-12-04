@@ -1,3 +1,3 @@
-(let ((x 3))
-  (define (square x) (* x x))
-  (print (square x)))
+(define (double x) (+ x x))
+(define (offset x amount) (- (+ x amount) 1))
+(let ((y (double 6))) (+ y (offset y 3)))
