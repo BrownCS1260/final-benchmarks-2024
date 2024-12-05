@@ -1,1 +1,2 @@
-
+(define (sqAdd1 x) (add1 (* x x)))
+(print (sqAdd1 (sqAdd1 (sqAdd1 (sqAdd 1 5)))))
