@@ -1,0 +1,11 @@
+(define (asdf x)
+  (let ((a 10))
+	(let ((b (- 5 2)))
+		(let ((c (+ b 10)))
+			(+ c x)
+		)
+	)
+   )
+)
+
+(print (asdf 5))

@@ -1,19 +1,15 @@
 {
     "No optimizations": [],
-    "Inlining": [
+    "Constant Propagation": [
+        "propagate-constants"
+    ],
+    "Constant propagation": [
         "uniquify-variables",
-        "inline"
+        "propagate-constants"
     ],
     "Constant propagation and inlining": [
         "uniquify-variables",
         "inline",
         "propagate-constants"
-    ],
-    "All optimizations": [
-        "uniquify-variables",
-        "inline",
-        "propagate-constants",
-        "eliminate-common-subexpressions",
-        "peephole"
     ]
 }

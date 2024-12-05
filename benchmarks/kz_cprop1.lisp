@@ -1,0 +1,8 @@
+(let ((x (add1 3)))  
+  (let ((y (sub1 x)))    
+    (let ((z (+ y 2)))         
+      (if (< z (+ (+ 2 2)(- 3 -7)))              
+          (let ((a (add1 z)))  
+            (let ((b (sub1 a))) 
+              (print (add1 b))))       
+          (print (sub1 z))))))         

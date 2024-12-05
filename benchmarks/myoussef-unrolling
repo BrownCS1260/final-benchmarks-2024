@@ -1,0 +1,2 @@
+(define (f n x y z) (if (= n 0) (+ x (+ y z)) (f (sub1 n) (+ x (+ 4 y)) (+ y 2) (+ z 1))))
+(print (f 10 2 1 0))
