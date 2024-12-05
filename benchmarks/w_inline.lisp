@@ -1,0 +1,5 @@
+(define (three x)
+    (+ x (+ x x)))
+(define (nine x)
+    (three (three x)))
+(let ((a 3)) (nine a))
