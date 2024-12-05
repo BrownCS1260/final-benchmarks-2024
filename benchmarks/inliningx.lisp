@@ -1,0 +1,13 @@
+(define (f x y z) (+ x (+ y z)))
+(define (g x y) (+ x (f x y (+ x y))))
+(define (h x) (+ x (f x (g x x) (+ x x))))
+
+(let ((x 5))
+    (let ((y 6))
+        (let ((z 7))
+            (let ((a 1))
+                (print (+ (f x y z) (+ (h a) (g a z))))
+            )
+        )
+    )
+)
