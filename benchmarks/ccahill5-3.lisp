@@ -1,3 +1,3 @@
 (let ((y 2)) 
-    (print(+ 6 (add1 (add1 (add1 (add1 2))))))
+    (print (+ 1 (+ 2 (+ 3 (+ 4 y)))))
 )
