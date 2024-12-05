@@ -1,1 +1,0 @@
-(if false 0 (eq (lt 4 8) (eq (lt 9 8) (if false true false))))
