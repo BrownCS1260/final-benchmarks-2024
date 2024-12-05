@@ -1,8 +1,8 @@
 (let ((a (readnum)))
     (let ((b (readnum)))
         (if (= 0 (- a b))
-            (print true)
-            (print false)
+            true
+            false
         )
     )
 )
