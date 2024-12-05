@@ -3,6 +3,10 @@
     "Constant Propagation": [
         "propagate-constants"
     ],
+    "Constant propagation": [
+        "uniquify-variables",
+        "propagate-constants"
+    ],
     "Constant propagation and inlining": [
         "uniquify-variables",
         "inline",

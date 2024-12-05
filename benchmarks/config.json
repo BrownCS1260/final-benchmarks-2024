@@ -1,0 +1,12 @@
+{
+    "No optimizations": [],
+    "Inlining": [
+        "inlinex"
+    ],
+    "Constant Propagation": [
+        "constantz"
+    ],
+    "Constant propagation and unrolling": [
+        "unrollingy"
+    ]
+}

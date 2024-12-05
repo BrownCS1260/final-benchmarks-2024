@@ -1,5 +1,0 @@
-(let ((a (+ (read-num) 1)))
-    (let ((b (+ (read-num) 1)))
-        (if (= a b)
-            (+ a b)
-            (- a b))))

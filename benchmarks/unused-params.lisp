@@ -1,0 +1,11 @@
+(define (f1 x) 4)
+(define (f2 x) (f1 x))
+(define (f3 x) (f2 x))
+(define (f4 x) (f3 x))
+(define (f5 x) (f4 x))
+(define (f6 x) (f5 x))
+(define (f7 x) (f6 x))
+(define (f8 x) (f7 x))
+(define (f9 x) (f8 x))
+
+(print (f9 0))
