@@ -1,0 +1,7 @@
+(let ((a (+ 3 2))
+      (b (* 4 5))
+      (c (+ 3 2)))
+  (let ((result (+ a b c)))
+    (if (= result 45)
+        (print (add1 result))
+        (print (sub1 result)))))
