@@ -1,0 +1,5 @@
+(let ((x (+ (read-num) 2)))
+    (let ((y (- (read-num) 3)))
+        (if (> x y)
+            (+ x y)
+            (- x y))))
